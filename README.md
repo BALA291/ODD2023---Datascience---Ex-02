@@ -121,6 +121,8 @@ sns.boxplot(y='weight',data=weight_new)
 ![o12](https://github.com/BALA291/ODD2023---Datascience---Ex-02/assets/120717501/53d5e0b2-0099-4333-9034-54861016e02a)
 
 
+
+
 # Result:
 
 Hence the given set of data is read and the outliers are removed using the IQR method and Zscore method.
