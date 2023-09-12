@@ -28,3 +28,91 @@ An Outlier is an observation in a given dataset that lies far from the rest of t
 ##Step4: Remove the outliers.
 
 ##Step5: Plot the datas using Box Plot.
+
+
+# code:
+
+##bhp.csv:
+```
+import pandas as pd
+import seaborn as sns
+import numpy as np
+from scipy import stats
+from google.colab import files
+uploaded=files.upload()
+df=pd.read_csv('bhp.csv')
+df.info()
+print(df.describe())
+df.head()
+#BEFORE REMOVING OUTLIER
+sns.boxplot(y='price_per_sqft',data=df)
+
+# PERFORMING IQR METHOD
+q1=df['price_per_sqft'].quantile(0.25)
+q3=df['price_per_sqft'].quantile(0.75)
+IQR=q3-q1
+low=q1-1.5*IQR
+high=q3+1.5*IQR
+new=df[((df['price_per_sqft']>=low)&(df['price_per_sqft']<=high))]
+
+#AFTER REMOVING OUTLIER using IQR method
+sns.boxplot(y='price_per_sqft',data=new)
+
+# PERFORMING Zscore METHOD
+z=np.abs(stats.zscore(df['price_per_sqft']))
+new2=df[(z<3)]
+
+#AFTER REMOVING OUTLIER using Zscore method
+sns.boxplot(y="price_per_sqft",data=new2)
+```
+##height.csv
+```
+import pandas as pd
+import seaborn as sns
+from google.colab import files
+uploaded=files.upload()
+df=pd.read_csv('height_weight.csv')
+df.info()
+df.describe()
+df.head()
+
+#BEFORE REMOVING OUTLIER in HEIGHT
+sns.boxplot(y='height',data=df)
+#PERFORMING IQR METHOD ON HEIGHTS
+height_q1 = df['height'].quantile(0.25)
+height_q3 = df['height'].quantile(0.75)
+height_IQR = height_q3 - height_q1
+height_low = height_q1 - 1.5 * height_IQR
+height_high = height_q3 + 1.5 * height_IQR
+height_new=df[((df['height']>=height_low)&(df['height']<=height_high))]
+#AFTER REMOVING OUTLIER in HEIGHT
+sns.boxplot(y='height',data=height_new)
+
+#BEFORE REMOVING OUTLIER in WEIGHT
+sns.boxplot(y='weight',data=df)
+#PERFORMING IQR METHOD ON HEIGHTS
+weight_q1 = df['weight'].quantile(0.25)
+weight_q3 = df['weight'].quantile(0.75)
+weight_IQR = weight_q3 - weight_q1
+weight_low = weight_q1 - 1.5 * weight_IQR
+weight_high = weight_q3 + 1.5 * weight_IQR
+weight_new=df[((df['weight']>=weight_low)&(df['weight']<=weight_high))]
+#AFTER REMOVING OUTLIER in WEIGHT
+sns.boxplot(y='weight',data=weight_new)
+```
+# Output:
+
+##bhp.csv
+
+![o1](https://github.com/BALA291/ODD2023---Datascience---Ex-02/assets/120717501/61d94636-e5f1-4fba-ba2c-1902b63b7dd3)
+![o2](https://github.com/BALA291/ODD2023---Datascience---Ex-02/assets/120717501/51f8d1c2-385b-434b-a06f-9aa09ec840ad)
+![o3](https://github.com/BALA291/ODD2023---Datascience---Ex-02/assets/120717501/33bb4856-de97-4205-acb2-373273e00f5a)
+![o4](https://github.com/BALA291/ODD2023---Datascience---Ex-02/assets/120717501/29138dea-6456-4268-bbe1-3d1ec8d67aa7)
+![o5](https://github.com/BALA291/ODD2023---Datascience---Ex-02/assets/120717501/8f7c2f6d-9e93-4ee8-80ce-28a726bd943f)
+![o6](https://github.com/BALA291/ODD2023---Datascience---Ex-02/assets/120717501/98d40afb-699e-4286-b700-97b543251f72)
+
+
+
+
+
+
