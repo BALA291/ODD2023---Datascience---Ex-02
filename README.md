@@ -19,20 +19,20 @@ You are given bhp.csv which contains property prices in the city of banglore, In
 An Outlier is an observation in a given dataset that lies far from the rest of the observations. That means an outlier is vastly larger or smaller than the remaining values in the set. An outlier is an observation of a data point that lies an abnormal distance from other values in a given population. (odd man out). Outliers badly affect mean and standard deviation of the dataset. These may statistically give erroneous results.
 
 # Algorithm:
-##Step1: Read the given Data.
+## Step1: Read the given Data.
 
-##Step2: Get the information about the data.
+## Step2: Get the information about the data.
 
-##Step3: Detect the Outliers using IQR method and Z score.
+## Step3: Detect the Outliers using IQR method and Z score.
 
-##Step4: Remove the outliers.
+## Step4: Remove the outliers.
 
-##Step5: Plot the datas using Box Plot.
+## Step5: Plot the datas using Box Plot.
 
 
 # code:
 
-##bhp.csv:
+## bhp.csv:
 ```
 import pandas as pd
 import seaborn as sns
@@ -65,7 +65,7 @@ new2=df[(z<3)]
 #AFTER REMOVING OUTLIER using Zscore method
 sns.boxplot(y="price_per_sqft",data=new2)
 ```
-##height.csv
+## height.csv
 ```
 import pandas as pd
 import seaborn as sns
@@ -102,7 +102,7 @@ sns.boxplot(y='weight',data=weight_new)
 ```
 # Output:
 
-##bhp.csv
+## bhp.csv
 
 ![o1](https://github.com/BALA291/ODD2023---Datascience---Ex-02/assets/120717501/61d94636-e5f1-4fba-ba2c-1902b63b7dd3)
 ![o2](https://github.com/BALA291/ODD2023---Datascience---Ex-02/assets/120717501/51f8d1c2-385b-434b-a06f-9aa09ec840ad)
