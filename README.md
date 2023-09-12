@@ -111,7 +111,19 @@ sns.boxplot(y='weight',data=weight_new)
 ![o5](https://github.com/BALA291/ODD2023---Datascience---Ex-02/assets/120717501/8f7c2f6d-9e93-4ee8-80ce-28a726bd943f)
 ![o6](https://github.com/BALA291/ODD2023---Datascience---Ex-02/assets/120717501/98d40afb-699e-4286-b700-97b543251f72)
 
+#height.csv
 
+![o7](https://github.com/BALA291/ODD2023---Datascience---Ex-02/assets/120717501/8ab62f65-875e-4dbf-889b-88c02ce2f29a)
+![o8](https://github.com/BALA291/ODD2023---Datascience---Ex-02/assets/120717501/45cdb489-c760-41f9-b85b-ebc9ef2f3354)
+![o9](https://github.com/BALA291/ODD2023---Datascience---Ex-02/assets/120717501/cdbd8286-6118-4d40-aafe-d4778764133b)
+![o10](https://github.com/BALA291/ODD2023---Datascience---Ex-02/assets/120717501/3b6c747a-534a-4480-b4aa-5f2b09fd84ee)
+![o11](https://github.com/BALA291/ODD2023---Datascience---Ex-02/assets/120717501/f7a0e19b-8bde-4766-ba3d-e25575cd04e4)
+![o12](https://github.com/BALA291/ODD2023---Datascience---Ex-02/assets/120717501/53d5e0b2-0099-4333-9034-54861016e02a)
+
+
+# Result:
+
+Hence the given set of data is read and the outliers are removed using the IQR method and Zscore method.
 
 
 
